@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>تصنيف المستندات</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+
+
+
+                           <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+
+                        </h:form>
+                    </h3>
+                </div><!-- end of site_title -->
+
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+
+
+            <div id="templatemo_menu1">
+
+                <ul>
+                    <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                    <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                    <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                </ul>   	
+
+            </div> <!-- end of templatemo_menu -->
+
+
+            <h:panelGroup rendered="#{not empty userId}">
+                <div id="menuSabt">
+                     <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                        </div>
+                    <div id="nav" style="text-align: center; " >
+
+
+                        <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+
+                            <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+
+                        </ui:repeat>
+
+
+                    </div>
+                </div> 
+            </h:panelGroup>
+            <div id="D_T">
+                <div id="backT">
+                    <h:form id="form_docType">
+
+                        <div id="left" style="width:570px; border-radius: 20px ;">
+
+
+                            <p style="text-align: center; ">
+                                <br/>
+
+                                <h7><h:outputText value="تصنيف المستندات" style="margin-left: 0px; " /></h7>
+                                <p:separator style="height: 7px; width: 570px;"></p:separator>
+
+                                <h:panelGrid columns="3" id="panelGrid10" style="size: 1000px; margin-left: 150px;" >
+
+                                    <h:inputText id="inputText_docTypeName"
+                                                 value="#{docTypes_backing.docTypeName}" required="false" validatorMessage="يجب الا يحتوي اسم الملف على  \/:*?| &gt; &lt;" style="margin-left: -30px;width: 178px;">
+                                        <f:validateRegex pattern=
+                                                         "[a-zA-Z0-9 _ أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ى ة ء ا ي ئ]*"/>
+                                    </h:inputText>
+                                    <h:outputText value="اسم التصنيف" style="font-size: 16px; font-weight: bold; margin-left: 35px;"/>
+                                    <h:outputText value="*" style="color: red"/>
+
+
+                                    <h:inputText id="inputText_docTypeNotes" value="#{docTypes_backing.docTypeNotes}" style="margin-left: -30px;width: 178px;" />  
+                                    <h:outputText value="ملاحظات" style="font-size: 16px; font-weight: bold; margin-left: 42px;"/>
+                                    <h:message for="inputText_docTypeNotes"/>
+
+
+
+                                    <p:selectOneMenu id="states" value="#{docTypes_backing.approverID}" 
+                                                     valueChangeListener="#{users_Backing.selectManageListner}" class="UName" style="width: 180px;margin-left: -30px;">
+
+                                        <f:selectItem itemLabel="اختار" itemValue="0"/>
+                                        <f:selectItems value="#{users_Backing.users}" var="User" 
+                                                       itemLabel="#{User.userName}" itemValue="#{User.userId}"/>
+                                    </p:selectOneMenu>
+
+                                    <h:outputText value="المسئول" style="font-size: 16px; font-weight: bold;margin-left: 45px;"/>
+                                    <h:message for="states"/>
+                                </h:panelGrid>
+                                <br/>
+                                <div id="hh" style=" margin-left: 90px;">
+                                    <p:commandButton value="تفريغ البيانات"  type="update"
+                                                     actionListener="#{docTypes_backing.reseting}" 
+                                                     update=":form_docType:createbtn deletebtn editbtn states inputText_docTypeNotes inputText_docTypeName table :form_docType:selectedDocument :form_docType:panelGrid3" icon="ui-icon-cancel" style="margin: 5px;"/>
+                                    <p:commandButton value="مسح" id="deletebtn" 
+                                                     action="#{docTypes_backing.Delete}" 
+                                                     disabled="#{docTypes_backing.disableEditp1}" 
+                                                     update="growl_docType :form_docType:createbtn deletebtn editbtn states inputText_docTypeNotes inputText_docTypeName table :form_docType:selectedDocument :form_docType:panelGrid3" icon="ui-icon-trash
+                                                     " style="margin: 5px;"/>
+                                    <p:commandButton value="تعديل" id="editbtn" 
+                                                     action="#{docTypes_backing.Edit}" 
+                                                     update=":form_docType:createbtn growl_docType :form_docType:table :form_docType:panelGrid10" 
+                                                     disabled="#{docTypes_backing.disableEditp1}" icon="ui-icon-pencil
+                                                     " style="margin: 5px;"/>
+
+
+                                    <p:commandButton id="createbtn" value="انشاء جديد" 
+                                                     action="#{docTypes_backing.New}"
+                                                     disabled="#{docTypes_backing.disableAddp1}" 
+                                                     update="growl_docType :form_docType:table" icon="ui-icon-plus
+                                                     " style="margin: 5px;"/>
+
+                                </div>
+                                <br/>
+                                <p:growl id="growl_docType" showDetail="true" life="2000"/>
+
+                                <h:panelGrid columns="1" >
+                                    <p:dataTable var="docTypeVar" value="#{docTypes_backing.docTypeItemsList}"
+                                                 sortBy="#{docTypeVar.doctypeId}" selectionMode="single"
+                                                 selection="#{docTypes_backing.selectedDocType}"
+                                                 rowKey="#{docTypeVar.doctypeId}" id="table"
+                                                 sortOrder="ascending" style="width: 565px; text-align: center" scrollable="true" scrollHeight="150">
+                                        <p:ajax event="rowSelect" listener="#{docTypes_backing.onRowSelect}"
+                                                update=":form_docType:growl_docType :form_docType:inputText_docTypeName :form_docType:inputText_docTypeNotes
+                                                :form_docType:states :form_docType:dataTable12 :form_docType:createbtn :form_docType:editbtn :form_docType:deletebtn
+                                                :form_docType:panelGrid3"/>
+                                        <f:facet name="header">
+                                            <h:outputText value="قائمة تصنيفات المستندات" id="outputText1" style="font-size: 17px;" />
+                                        </f:facet>
+                                        <p:column id="column2">
+                                            <f:facet name="header">
+                                                <h:outputText value="المسئول"/>
+                                            </f:facet>
+                                            <h:outputText value="#{docTypeVar.approverID.userName}"/>
+                                        </p:column>
+
+                                        <p:column id="column3">
+                                            <f:facet name="header">
+                                                <h:outputText value="ملاحظات"/>
+                                            </f:facet>
+                                            <h:outputText value="#{docTypeVar.notes}"/>
+                                        </p:column>
+                                        <p:column id="column4">
+                                            <f:facet name="header">
+                                                <h:outputText value="اسم التصنيف"/>
+                                            </f:facet>
+                                            <h:outputText value="#{docTypeVar.doctypeName}"/>
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:panelGrid>
+
+
+                                <p:panel id="selectedDocument"  header="عناصر بيانات المستند" style="text-align: center;">
+                                    <f:facet name="header">
+                                        <h:outputText value="عناصر بيانات المستند" id="outputText1" style="font-size: 17px;" />
+                                    </f:facet>
+                                    <div id="hh" style=" margin-left: -27px;">
+                                        <h:panelGrid columns="1" cellspacing="10px" id="panelGrid3">
+
+
+                                            <h:panelGrid columns="3" id="panelGrid2" style="margin-left: 130px;">
+
+
+                                                <h:inputText binding="#{docTypes_backing.fieldNameText}" disabled="#{docTypes_backing.disableText}"
+                                                             id="fieldNameText" value="#{docTypes_backing.fieldName}" validatorMessage="يجب الا يحتوي اسم الملف على  \/:*?| &gt; &lt;" style="width: 175px;">
+                                                    <f:validateRegex pattern=
+                                                                     "[a-zA-Z0-9 _ أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ى ة ء ا ي ئ]*"/>
+                                                </h:inputText> 
+                                                <h:outputText value="الاسم" id="outputText2" />
+                                                <h:outputText value="*" style="color: red"/>
+
+
+                                                <h:selectOneMenu id="FieldTypeComboBox" disabled="#{docTypes_backing.disableText}" 
+                                                                 value="#{docTypes_backing.fieldType}" style="width: 180px;margin-left: 0px;">
+                                                    <f:selectItem  itemLabel="اختار"
+                                                                   itemValue=""/>
+                                                    <f:selectItem id="CharacterOption" itemLabel="حروف"
+                                                                  itemValue="حروف"/>
+                                                    <f:selectItem id="NumberOption" itemLabel="ارقام"
+                                                                  itemValue="ارقام"/>
+                                                    <f:selectItem id="DateOption" itemLabel="تاريخ" 
+                                                                  itemValue="تاريخ"/>
+                                                </h:selectOneMenu> 
+                                                <h:outputText value="النوع" id="outputText3"/>
+                                                <h:outputText value="*" style="color: red"/>
+
+
+                                                <p:inputMask id="FieldLengthText" disabled="#{docTypes_backing.disableText}"
+                                                             value="#{docTypes_backing.fieldLength}" mask="99" required="false" requiredMessage="Field Length is required"/>  
+                                                <h:outputText value="الطول" id="outputText4"/>
+                                                <h:outputText value="  *" style="color: red"/>
+
+                                                <h:selectOneRadio label="required" id="RequiredRadio" disabled="#{docTypes_backing.disableText}"
+                                                                  value="#{docTypes_backing.requierd}" required="false" requiredMessage="this field is required" style="margin-left: 40px;">
+
+                                                    <f:selectItem itemLabel="لا" itemValue="لا" id="RequiredNo"/>
+                                                    <f:selectItem itemLabel="نعم" itemValue="نعم" id="RequiredYes"/>
+                                                </h:selectOneRadio> 
+
+                                                <h:outputText value="مطلوب" 
+                                                              id="outputText5"/>
+                                                <h:outputText value="*" style="color: red"/>
+
+
+                                                <p:commandButton value="تفريغ بيانات"  
+                                                                 actionListener="#{docTypes_backing.resetFields}" 
+                                                                 update="table :form_docType:selectedDocument :form_docType:panelGrid3" icon="ui-icon-cancel
+                                                                 "/>
+
+                                                <p:commandButton value="تعديل" 
+                                                                 id="editbtn2"
+                                                                 actionListener="#{docTypes_backing.onEditDataDef}" disabled="#{docTypes_backing.disableEditp2}" 
+                                                                 update=":form_docType:growl_docType :form_docType:panelGrid3" icon="ui-icon-pencil
+                                                                 "/>
+                                                <p:commandButton value="انشاء جديد" 
+                                                                 id="createbtn2"
+                                                                 actionListener="#{docTypes_backing.onInsertDataDef}" disabled="#{docTypes_backing.disableAddp2}" update=":form_docType:growl_docType :form_docType:panelGrid12" style="size: 100px;" icon="ui-icon-plus
+                                                                 "/>
+
+                                            </h:panelGrid>
+                                            <br/>
+
+                                            <h:panelGrid columns="1" id="panelGrid12" style="text-align: center; margin-right: 300px;">
+                                                <p:remoteCommand resetValues="true" id="remote"/>
+                                                <p:dataTable var="DocDTD" value="#{docTypes_backing.docDataTypeDefList}"
+                                                             id="dataTable12"
+                                                             rowKey="#{DocDTD.dataDefID}"
+                                                             selectionMode="single"
+                                                             selection="#{docTypes_backing.selectedDocTypeDataDefRow}" 
+                                                             emptyMessage="لا يوجد بيانات" style="width: 560px; " scrollable="true" scrollHeight="50">
+                                                    <p:ajax event="rowSelect"
+                                                            listener="#{docTypes_backing.onDocDefRowSelect}"
+                                                            update=":form_docType:fieldNameText :form_docType:FieldTypeComboBox 
+                                                            :form_docType:createbtn2 :form_docType:editbtn2 :form_docType:deletebtn2
+                                                            :form_docType:FieldLengthText :form_docType:RequiredRadio"/>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="قائمة عناصر المستند"
+                                                                      id="outputText1" style="font-size: 17px;"/>
+                                                    </f:facet>
+
+
+
+
+
+                                                    <p:column>
+                                                        <f:facet name="header">
+                                                            <h:outputText value="مطلوب"/>
+                                                        </f:facet>
+                                                        <h:outputText value="#{DocDTD.required}"/>
+                                                    </p:column>
+
+                                                    <p:column>
+                                                        <f:facet name="header">
+                                                            <h:outputText value="الحجم"/>
+                                                        </f:facet>
+                                                        <h:outputText value="#{DocDTD.fieldLength}"/>
+                                                    </p:column>
+                                                    <p:column>
+                                                        <f:facet name="header">
+                                                            <h:outputText value="النوع"/>
+                                                        </f:facet>
+                                                        <h:outputText value="#{DocDTD.fieldType}"/>
+                                                    </p:column>
+                                                    <p:column>
+                                                        <f:facet name="header">
+                                                            <h:outputText value="الاسم"/>
+                                                        </f:facet>
+                                                        <h:outputText value="#{DocDTD.fieldName}"/>
+                                                    </p:column>
+
+
+
+                                                </p:dataTable>
+
+                                                <p:commandButton value="مسح" 
+                                                                 id="deletebtn2"
+                                                                 actionListener="#{docTypes_backing.onDeleteDataDef}" disabled="#{docTypes_backing.disableEditp2}" 
+                                                                 update=":form_docType:growl_docType :form_docType:panelGrid3" icon="ui-icon-trash
+                                                                 "/>
+
+                                            </h:panelGrid>
+
+                                        </h:panelGrid>
+
+                                    </div>
+
+
+                                </p:panel>
+
+                            </p>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="templatemo_footer_wrapper1">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+    </h:body>
+
+</html>

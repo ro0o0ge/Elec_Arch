@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>تسجيل دخول</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+
+
+
+                           <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+
+                        </h:form>
+                    </h3>
+                </div><!-- end of site_title -->
+
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+               <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+            <div id="templatemo_middle">
+
+                <div id="templatemo_banner">
+
+                    <!--  <h1>BE ACTIVE<span>with the best coffee</span></h1> -->
+
+                </div>
+
+                <div id="templatemo_menu">
+
+                    <ul>
+                        <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                        <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                        <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                    </ul>   	
+
+                </div> <!-- end of templatemo_menu -->
+            </div>
+
+
+           
+            <div id="pannel">
+                <div id="cont1" class="center_content" style="margin-top: 30px; margin-left: 1px; text-shadow: 1px 1px 2px #ffffff; ">
+                    <h:panelGroup rendered="#{not empty userId}">
+                        <p>#{userName}  مرحبا بك : تم تسجيلك للدخول </p>
+
+                    </h:panelGroup>
+                </div>
+                <div id="backLog">
+                <h:form>
+                    <div id="left" style="width:340px; border-radius: 20px ;">
+
+
+                            <p style="text-align: center; ">
+                    <p:growl id="msg" showDetail="true" life="1500"/>
+                                         <br/>
+
+
+                                <h7><h:outputText value="تسجيل دخول" style="margin-left: 10px;" /></h7>
+                                <p:separator style="height: 7px; width: 348px;"></p:separator>
+                                <br/>
+                                         <h:panelGrid  columns="3" style="margin-left: 35px;">
+  
+                        <p:inputText  id="inputText1" binding="#{login_Backing.inputText1}"
+                                      value="#{login_Backing.userName}" required="true" 
+                                      requiredMessage="ادخل اسم المستخدم"/>  
+                         <h:outputText value="اسم المستخدم" id="outputText1" style="margin-left: 30px; font-size: 16px; "/>
+                        <h:outputText value="*" style="color: red"/>
+                       
+                        <p:password  id="inputSecret1" value="#{login_Backing.password}" 
+                                     required="true" requiredMessage="ادخل كلمة السر"/> 
+                         <h:outputText value="كلمة السر" style="margin-left: 30px;"/>
+                        <h:outputText value="*" style="color: red"/>
+                         </h:panelGrid>
+                                          <br/>
+                        <div id="hh" style=" margin-left: -75px;">
+                        
+                        <p:commandButton value="تفريغ البيانات" id="commandButton3" type="reset" style="margin: 5px;" icon="ui-icon-cancel"/>
+                        <p:commandButton value="تسجيل دخول" id="commandButton1" actionListener="#{login_Backing.logIn}"  update="msg" style="margin: 5px; " icon="ui-icon-check"/>
+                      
+                        </div>
+                                           <br/>
+                            </p>
+                    </div> 
+                </h:form>
+                </div>
+            </div>
+
+        </div>
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+    </h:body>
+</html>
+

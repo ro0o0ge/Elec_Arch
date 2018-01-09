@@ -1,0 +1,9 @@
+* Work Env.
+-Netbeans 8.0
+-Apache Tomcat 7.0
+-MySQL 5.6
+* All External Jars are Included in project
+*******************************************
+*To Gain Access Please Login with the following cardinalities:
+		UserName: Abdo
+		Password: 123

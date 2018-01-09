@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ez="http://xmlns.jcp.org/jsf/composite/ezcomp">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>إرسال رسالة</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="templatemo_wrapper">
+
+
+
+            <div id="site_title" >
+                <h3 align="center" >
+                    <h:form>
+
+
+
+                       <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+
+                    </h:form>
+                </h3>
+            </div><!-- end of site_title -->
+
+            <div id="templatemo_header">
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                 <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+
+
+            <div id="templatemo_menu1">
+
+                <ul>
+                    <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                        <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                        <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                </ul>   	
+
+            </div> <!-- end of templatemo_menu -->
+
+
+
+
+            <h:panelGroup rendered="#{not empty userId}">
+                <div id="menuSabt">
+                    <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                        </div>
+                     <div id="nav" style="text-align: center; " >
+                            
+                                
+                                <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+                              
+                                    <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+                                  
+                                </ui:repeat>
+                                
+                          
+                        </div>
+                </div> 
+            </h:panelGroup>
+            <div id="D_M">
+                <div id="backM"  >
+                    <h:form id="form2">
+                        <p:growl id="msg" showDetail="true" life="2000"/>
+
+
+                        <div id="left" style="width:553px; border-radius: 20px ;">
+
+
+                            <br/>
+                            <h7><h:outputText value="إرسال رسالة" style="margin-left: 190px;" /></h7>
+                            <p:separator style="height: 7px; width: 553px;"></p:separator>
+                           
+                            <h:panelGrid id="panel1" columns="4">
+                               
+                                <h:panelGrid id="tempspanel" columns="1" style="margin-left: 45px; width: 100px; margin-top: -20px;">
+                                    <p:outputLabel value="نماذج الرسائل" style="font-weight: bold; margin-left: 85px;" />
+                                    <p:selectOneMenu id="templist"  label="اختيار نموذج نصي" 
+                                                     value="#{message_Backing.selectedTemplate}"
+                                                     style="width: 180px;margin-left: -30px; text-align: center" class="UName">
+                                        <f:selectItem itemLabel="اختار نموذج" itemValue="0" />
+                                        <f:selectItems value="#{message_Backing.templateList}" var="temp"
+                                                       itemLabel="#{temp.TTitle}" itemValue="#{temp.TId}" />                                
+                                    </p:selectOneMenu>
+                                    <p:commandButton value="تاكيد النموذج" actionListener="#{message_Backing.putTemplate}" update="body" icon="ui-icon-document" style="width: 115px;"/>
+                                    <p:outputLabel value="اختيار نموذج يمحو محتوى الرسالة" style="font-size: 14px;text-align: 
+                                                   center; margin-left: -20px;color: #ca093f; " />
+                                    <h:panelGrid id="attachDoc" columns="1" style="margin-left:-20px; text-align:center">
+                                        <br/>
+                                    <p:outputLabel value="ارفاق مستندات" style="font-weight: bold;" />
+                                    <p:selectManyMenu id="attachId" scrollHeight="100"  showCheckbox="true"
+                                                      value="#{message_Backing.selectedDoc}" style="text-align:left"  >
+
+                                        <f:selectItems value="#{message_Backing.docList}" var="doc" 
+                                                       itemLabel="    #{doc.docSer}" itemValue="#{doc.docSer}" />
+                                    </p:selectManyMenu>
+                                </h:panelGrid>
+                                </h:panelGrid>
+                                
+                             
+
+                                <h:panelGrid id="bodypanel" columns="2" style="margin-left: 40px; text-align:right">
+                                    <h:outputLabel/>
+                                    <h:outputLabel value="عنوان الرسالة" style="font-size:16px;font-weight: bold"/>
+                                    <h:outputLabel/>
+                                    <p:inputTextarea rows="1" cols="20" counter="display2" 
+                                                     counterTemplate="باقي  {0} أحرف" 
+                                                     autoResize="false" 
+                                                     id="subject" value="#{message_Backing.subject}"  maxlength="30" style="resize: none" />
+                                    <h:outputLabel/>
+                                    <h:outputText id="display2" style="margin-right: 100px; color: #ca093f" />
+                                    <h:outputLabel/>
+
+                                    <h:outputLabel value="محتوي الرسالة" style="font-size:16px; size: 30px;font-weight: bold"/>
+
+                                    <h:outputLabel />
+                                    <h:outputLabel value="*" style="color: red; margin-left: 20px;"/>
+                                    <h:outputLabel />
+                                    <p:inputTextarea id="body" rows="8" cols="35" value="#{message_Backing.body}"
+                                                     counter="display" maxlength="200" 
+                                                     counterTemplate="باقي  {0} أحرف" autoResize="false" style="resize: none;"/>
+                                    <h:outputLabel/>
+                                    <h:outputText id="display" style="margin-right: 195px; color: #ca093f"/>
+                                </h:panelGrid>
+                                <p:outputLabel/>
+                                <p:outputLabel/>
+                            </h:panelGrid>
+                            <br/>
+                            <p:separator style="height: 7px; width: 553px; margin-left: 0px;"></p:separator>
+                            <br/>
+                            <p:outputLabel value=":المرسل اليهم" style="font-weight: bold;font-size: 20px; margin-left: 430px;"/>
+                           <br/>
+                           <br/>
+                           <h:panelGrid id="panel2" columns="4" style="margin-left: 15px;">
+                                <h:panelGrid id="groupspanel" columns="1" style="margin-left: 60px; text-align:right;">
+                                    <p:outputLabel value="اختيار مجموعات" style="font-weight: bold;"/>
+                                    <p:selectManyMenu id="groupslist" scrollHeight="150" showCheckbox="true" label="اختيار مجموعات" 
+                                                      value="#{message_Backing.selectedgroups}" style="text-align: left">
+                                        <f:selectItems value="#{message_Backing.groupsList}" var="gorup"
+                                                       itemLabel="    #{gorup.groupName}" itemValue="#{gorup.groupId}"/>                                
+                                    </p:selectManyMenu>
+                                </h:panelGrid>
+
+                                <h:panelGrid id="userspanel" columns="1" style="margin-left: 60px; text-align:right">
+                                    <p:outputLabel value="اختيار مستخدمين" style="font-weight: bold;"/>
+                                    <p:selectManyMenu id="users" scrollHeight="150"  showCheckbox="true"
+                                                      value="#{message_Backing.selectedUsers}" style="text-align: left"  >
+
+                                        <f:selectItems value="#{message_Backing.usersList}" var="user" 
+                                                       itemLabel="    #{user.userName}" itemValue="#{user.userId}"/>
+                                    </p:selectManyMenu>
+                                </h:panelGrid>
+                                <br/>
+                                <p:outputLabel/>
+                                <p:outputLabel/>
+
+
+                                
+                                <p:outputLabel/>
+                                <p:outputLabel/>
+
+                                <br/><br/>
+
+                                <p:outputLabel/>
+
+                                <p:outputLabel/>
+                                <p:outputLabel/>
+                                <p:outputLabel/>
+                                
+                               
+                                
+                                <br/>
+                            </h:panelGrid>
+                       <div id="hh" style=" margin-left: 150px;">
+
+                                    <p:commandButton value="تفريغ البيانات" 
+                                                     actionListener="#{message_Backing.resetValues}"
+                                                     update="panel1 panel2" icon="ui-icon-cancel" style="margin-left: 10px;"/> 
+                                 
+                                    <p:commandButton value="إرسال" 
+                                                     actionListener="#{message_Backing.sendMessage}"
+                                                     update="msg panel1 panel2" icon="ui-icon-mail-closed" style="margin-left: 10px;"/>
+
+                       </div>
+                            <br/>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <!-- end of wrapper -->
+
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+        <!-- templatemo 252 active -->
+        <!-- 
+        Active Template 
+        http://www.templatemo.com/preview/templatemo_252_active 
+        -->
+    </h:body>
+</html>

@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>اضافة المستندات</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+                            <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+                        </h:form>
+                    </h3>
+                </div><!-- end of site_title -->
+
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+
+
+
+            <div id="templatemo_menu1">
+
+                <ul>
+                   <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                        <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                        <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                </ul>   	
+
+            </div> <!-- end of templatemo_menu -->
+
+            <h:panelGroup rendered="#{not empty userId}">
+                <div id="menuSabt">
+                    <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                        </div>
+                     <div id="nav" style="text-align: center; " >
+                            
+                                
+                                <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+                              
+                                    <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+                                  
+                                </ui:repeat>
+                                
+                          
+                        </div>
+                </div> 
+            </h:panelGroup>
+
+
+            <div id="Doc">
+                <div id="backD">
+                    <h:form id="form1" enctype="multipart/form-data" >
+                        <p:growl id="messages" showDetail="true" life="2000"/>
+                        <div id="left" style="width:355px; border-radius: 20px ;">
+
+                            <h:panelGroup id="imgcontent" layout="block" class="left_content"
+                                          style="width: 10px; height: 10px; margin-left: -400px; "> 
+                                <img id="image" src="#{doc_Backing.pathToFile}" alt="لا يوجد صورة " style="width: 390px; height: 564px; text-align: right;" />
+                            </h:panelGroup>
+                            <p style="text-align: center; ">
+                                <br/>
+
+                                <h7><h:outputText value="اضافة المستندات" style="margin-left: 25px; " /></h7>
+                                <p:separator style="height: 7px; width: 365px;"></p:separator>
+
+                                <h:panelGrid columns="2" id="panelGrid1"  style="width: 350px; text-align: center;">
+
+                                    <p:selectOneMenu id="selectOneMenu1" value="#{doc_Backing.ownerId}" disabled="#{doc_Backing.disabledoctype}"
+                                                     converter="omnifaces.SelectItemsIndexConverter" 
+                                                     style="width: 180px;margin-left: -5px; " immediate="true" class="UName"
+                                                     valueChangeListener="#{doc_Backing.SelectOwnerId}" > 
+
+                                        <f:selectItem itemLabel="اختار" itemValue="0" />
+                                        <f:selectItems value="#{doc_Backing.docOwnerList}" var="o1" 
+                                                       itemLabel="#{o1.ownerId}" itemValue="#{o1.ownerId}"  />
+                                        <p:ajax event="change" update="Ser1 panelGrid2 panelGrid22" />
+                                    </p:selectOneMenu>
+                                    <h:outputText value="الملف" style=" font-size: 16px; font-weight: bold; margin-left: 85px;"/>
+
+
+                                    <p:selectOneMenu id="displayDoc" value="#{doc_Backing.seletedDocType}"
+                                                     style="width: 180px;margin-left: -5px;" disabled="#{doc_Backing.disabledoctype}"
+                                                     valueChangeListener="#{doc_Backing.SelectDocType}" class="UName">
+
+                                        <f:selectItem itemLabel="اختار" itemValue="0"/>
+                                        <f:selectItems value="#{docTypes_backing.docTypeItemsList}" var="doc"
+                                                       itemLabel="#{doc.doctypeName}" itemValue="#{doc.doctypeId}"/>
+                                        <p:ajax event="change" update="datatable panelGrid4"/>
+                                    </p:selectOneMenu>
+                                    <h:outputText value="تصنيف المستند"  style="text-align: right; font-size: 16px; font-weight: bold; margin-left: 45px;"/>
+
+
+                                    <h:outputText  id="Ser1"  value="#{doc_Backing.serial}" style="font-size: 1em; font-weight: bold;"/>
+                                    <h:outputText value="مسلسل المستند" style="text-align: right; font-size: 16px; font-weight: bold;margin-left: 45px;"/>
+
+
+                                    <h:inputText  id="loc" value="#{doc_Backing.location}" 
+                                                  validatorMessage="يجب الا يحتوي اسم الملف على  \/:*?| &gt; &lt;" style="width: 178px; margin-left: -3px;margin-top: 3px;">
+                                        <f:validateRegex pattern="[a-zA-Z0-9 _ أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ى ة ء ا ي ئ إ آ ]*"/>
+                                    </h:inputText>
+                                    <h:outputText value="مكان المستند فى الارشيف"  style="text-align: right; font-size: 15px; font-weight: bold;"/>
+
+                                </h:panelGrid>
+
+                                <p:separator style="height: 7px; width: 365px;"></p:separator>
+
+
+                                <h:panelGrid columns="1" id="panelGrid2"  style="width: 350px; text-align: center;">
+                                    <h:outputText value="تحميل صورة المستند" style="font-size: 16px; font-weight: bold"/>
+
+                                    <p:fileUpload
+                                        class="fileupload-simple"
+                                        fileUploadListener="#{doc_Backing.uploadDocument}"
+                                        allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                                        invalidFileMessage="(.jpg / .jpeg / .gif / .png) من فضلك اختر صورة من نوع"
+                                        disabled="#{doc_Backing.disableUpload}"
+                                        label="إختيار الملف"
+                                        uploadLabel="رفع"
+                                        cancelLabel="إلغاء"
+                                        multiple="false"
+                                        sizeLimit="1048576"
+                                        fileLimit="1"
+                                        fileLimitMessage="تم اختيار الملف المراد رفعه"
+                                        invalidSizeMessage="ميجا1 يجب ألا تتعدى مساحة الملف"
+                                        mode="advanced" update=" messages imgcontent panelGrid2 displayDoc selectOneMenu1"/> 
+                                </h:panelGrid>
+
+                                <p:separator style="height: 7px; margin-top: 10px; width: 365px;"></p:separator>
+
+                                <h:panelGrid columns="1" id="panelGrid22"  style="width: 350px; text-align: center; ">
+                                    <h:outputText value="الملفات المرفقة" style="font-size: 16px; font-weight: bold" />
+                                    <p:fileUpload 
+                                        class="fileupload-simple"
+                                        fileUploadListener="#{doc_Backing.uploadAttachment}"
+                                        disabled="#{doc_Backing.disableAttach}"
+                                        label="إختيار المرفقات"
+                                        uploadLabel="رفع"
+                                        cancelLabel="إلغاء"
+                                        sizeLimit="5242880"
+                                        multiple="true"
+                                        invalidSizeMessage="ميجا5 يجب ألا تتعدى مساحة الملف"
+                                        mode="advanced" />
+                                </h:panelGrid>
+
+                                <p:separator style="height: 7px; margin-top: 10px; width: 365px;"></p:separator>
+
+
+                                <h:panelGrid columns="1" id="panelGrid3" style=" text-align: center; width: 350px; ">
+
+                                    <p:dataTable id="datatable" value="#{doc_Backing.docDataList}"
+                                                 editable="true" rowKey="#{dc.dataID}"
+                                                 var="dc" style="position: inherit;width: 350px;" emptyMessage="لا يوجد بيانات">
+
+                                        <p:ajax event="rowEdit" listener="#{doc_Backing.onRowEdit}" update=":form1:messages datatable" />
+                                        <p:ajax event="rowEditCancel" listener="#{doc_Backing.onRowCancel}" update=":form1:messages" />
+
+                                        <p:column id="column2" style="width: 30%">
+                                            <h:outputText  value="#{dc.fieldName}"/>
+                                        </p:column>
+                                        <p:column id="column3">
+                                            <p:cellEditor>
+                                                <f:facet name="output"><h:outputText value="#{dc.fieldValue}"/></f:facet>
+                                                <f:facet name="input"><p:inputText id="docData1" value="#{dc.fieldValue}" type="#{doc_Backing.selectedRow(dc.fieldName)}" style="width: 100%"/></f:facet>
+                                            </p:cellEditor>
+                                        </p:column>
+                                        <p:column style="width:32px">
+                                            <p:rowEditor />
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:panelGrid>
+
+                                <p:separator style="height: 7px; width:365px;"></p:separator>
+                                <h:panelGrid columns="2" id="panelGrid4"  style="width: 350px; text-align: center; ">
+                                    <p:commandButton id="bb" ajax="false" type="submit" value="حفظ المستند" disabled="#{doc_Backing.disableCreate}"  actionListener="#{doc_Backing.New}" icon="ui-icon-disk">
+                                        <p:ajax  update="form1 imgcontent messages"/>
+                                    </p:commandButton> 
+                                    
+                                </h:panelGrid>
+                            </p>
+                        </div>
+
+
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> 
+            </div>
+        </div>
+    </h:body>
+
+</html>
+

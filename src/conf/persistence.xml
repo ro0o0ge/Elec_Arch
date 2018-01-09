@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Model-1" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Entity.Users</class>
+    <class>Entity.Documents</class>
+    <class>Entity.DocHomes</class>
+    <class>Entity.DocOwners</class>
+    <class>Entity.DocTypes</class>
+    <class>Entity.Users_Entity</class>
+    <class>Entity.Groups_Entity</class>
+    <class>Entity.Documents_Entity</class>
+    <class>Entity.DoctypeDataDef_Entity</class>
+    <class>Entity.Permissions_Entity</class>
+    <class>Entity.TransactionLog_Entity</class>
+    <class>Entity.DocHomes_Entity</class>
+    <class>Entity.DocOwners_Entity</class>
+    <class>Entity.DocumentData_Entity</class>
+    <class>Entity.DocTypes_Entity</class>
+    <class>Entity.DocumentData</class>
+    <class>Entity.Groups</class>
+    <class>Entity.UserGroup</class>
+    <class>Entity.DoctypeDataDef</class>
+    <class>Entity.PagePermission</class>
+    <class>Entity.TransactionLog</class>
+    <class>Entity.Permissions</class>
+    <class>Entity.AppRequest</class>
+    <class>Entity.ApprovalRequest</class>
+    <class>Entity.ApplicationPages</class>
+    <class>Entity.Attachment</class>
+    <class>Entity.Message</class>
+    <class>Entity.Recievers</class>
+    <class>Entity.Template</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/arch-1?useUnicode=yes&amp;characterEncoding=UTF-8"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+   
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/faces/Login.xhtml</location>
+    </error-page>
+    <session-config>
+        <session-timeout>
+            10
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/faces/Home.xhtml</welcome-file>
+    </welcome-file-list>
+    
+     <!-- JasperReports Servlet -->
+    <servlet>
+        <servlet-name>PdfServlet</servlet-name>
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.PdfServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JExcelApiServlet</servlet-name>
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.JExcelApiServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RtfServlet</servlet-name>
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.RtfServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+    </servlet>
+        <!-- JasperReports Servlet Mapping -->   
+    <servlet-mapping>
+        <servlet-name>PdfServlet</servlet-name>
+        <url-pattern>/servlets/report/PDF</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JExcelApiServlet</servlet-name>
+        <url-pattern>/servlets/report/EXCEL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RtfServlet</servlet-name>
+        <url-pattern>/servlets/report/RTF</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/servlets/image</url-pattern>
+    </servlet-mapping>
+    
+    
+</web-app>

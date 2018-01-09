@@ -1,0 +1,1062 @@
+/*
+Credit: http://www.templatemo.com
+*/
+
+/* 
+Active Template 
+http://www.templatemo.com/preview/templatemo_252_active 
+*/
+
+.fileupload-simple >  .ui-fileupload-content{
+    width: 340px;
+    overflow:scroll;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    color: #3a3430;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+    line-height:1.5em; 
+    background-color: #013356;
+    background-image: url(images/body211.png);
+    background-repeat: inherit;
+    background-position: top center ;
+
+    background-size:cover; /* Height: auto is to keep aspect ratio */
+    background-repeat:no-repeat;    
+
+}
+
+a, a:link, a:visited {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #990000;
+    text-decoration: none;
+}
+
+p { margin: 0px; padding: 0 0 10px 0; }
+img { border: none; }
+h8 { font-size: 18px; font-weight: bold; margin: 0 0 20px 0; padding: 0; color: #446787; }
+h7 { font-size: 40px; font-weight: bold; margin: 0 0 30px 0; padding: 5px 0; color: #6d2635; text-shadow: 1px 2px #e1d5d5; }
+h2 { font-size: 28px; font-weight: normal; line-height: 28px; margin: 0 0 30px 0; padding: 0; color: #000; 	/* text-shadow: 1px 1px 1px #555; */ }
+h3 { font-size: 21px; margin: 0 0 20px 0; padding: 0; padding: 0; color: #fff; }
+h4 { font-size: 18px; font-weight: normal; margin: 0 0 20px 0; padding: 0; color: #000; }
+h5 { font-size: 16px; margin: 0 0 10px 0; padding: 0; color: #000; }
+h6 { font-size: 14px; margin: 0 0 5px 0; padding: 0;}
+h1 { font-size: 40px; font-weight: bold; margin: 0 0 30px 0; padding: 5px 0; color: #0099E8; text-shadow: 1px 2px #fff; }
+.cleaner { clear: both; width: 100%; height: 0px; font-size: 0px;  }
+.cleaner_h10 { clear: both; width:100%; height: 10px; }
+.cleaner_h20 { clear: both; width:100%; height: 20px; }
+.cleaner_h30 { clear: both; width:100%; height: 30px; }
+.cleaner_h40 { clear: both; width:100%; height: 40px; }
+.cleaner_h50 { clear: both; width:100%; height: 50px; }
+.cleaner_h60 { clear: both; width:100%; height: 60px; }
+
+.margin_r30 { margin-right: 30px; }
+.margin_b20 { margin-bottom: 20px; }
+
+.vertical_divider { background: url(images/templatemo_vertical_divider.jpg) repeat-y right;  }
+.horizon_divider {  background: url(images/templatemo_hor_divider.jpg) repeat-x bottom; }
+
+.float_l {
+   
+    size: 100px;
+    width: 160px;
+    
+}
+
+.float_r {
+    float: right;
+}
+
+.image_wrapper {
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #999;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+.image_wrapper2 {
+    display: inline-block;
+    padding: 4px;
+    border: 1px solid #999;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+.fl_img {
+    float: left;
+    margin: 3px 30px 15px 0;
+}
+.fr_img {
+    float: right;
+    margin: 3px 0 15px 15px;
+}
+
+blockquote { font-style: italic; margin-left: 10px;}
+cite { font-weight: bold; }
+cite span { color: #996600; }
+em { color: #000; }
+
+.templatemo_list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.templatemo_list li {
+
+    margin:0 0 20px;
+    padding:0 0 0 25px;
+    line-height: 1em;
+}
+
+.templatemo_list li a {
+    text-decoration: none;
+}
+
+.templatemo_list li a:hover {
+    text-decoration: underline;
+}
+
+.button a {
+    clear: both;
+    display: block;
+    width: 102px;
+    height: 75px;
+    padding: 5px 0 0 0;
+    margin-top: 10px;
+    margin-left: 0px;
+    background:  url(images/button.png) no-repeat;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button a:hover {
+    background: url(images/button1.png) no-repeat;
+}
+
+#templatemo_wrapper {
+    width: 970px;
+    padding: 0 10px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+#templatemo_header {
+    width: 900px;
+    height: 100px;
+    padding: 0 35px;
+
+}
+
+#pannel {
+    width: 900px;
+    height: 250px;
+    padding: 0 350px;
+    margin-top: 20px;
+    background-size: cover;
+    text-align: center;
+}
+#pannel1 {
+    padding: 0 150px;
+
+    margin-top: 120px;
+    background-size: cover;
+    text-align: center;
+
+}
+#pannel2 {
+    padding: 0 0px;
+    width: 600px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-size: cover;
+    text-align: center;
+
+}
+
+#pannel3 {
+
+    padding: 0 350px;
+
+    width: 1000px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+    background-size: contain;
+    text-align: center;
+
+}
+
+#viewD{
+    padding: 0 0px;
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 300px;
+    background-size: contain;
+    text-align: center;
+
+}
+#Doc{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 0px;
+    position: relative;
+    float: right;
+
+}
+#imgcontent{
+    width: 50px;
+     float: left;
+      margin-top: 100px;
+}
+#D_A{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+}
+#D_AAA{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 175px;
+    position: relative;
+    float: right;
+}
+#D_PG{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+}
+#D_PU{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+}
+#D_PP{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+}
+#label{
+    display: inline-block;
+    
+}
+#D_M{
+    width: 70px;
+
+    margin-top: 90px;
+    text-aling: left;
+    padding: 0 190px;
+    position: relative;
+    float: right;
+}
+#D_N{
+    width: 50px;
+
+    margin-top: 90px;
+    text-aling: left;
+    padding: 0 190px;
+    position: relative;
+    float: right;
+}
+#D_MG{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 120px;
+    position: relative;
+    float: right;
+}
+#D_MU{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 120px;
+    position: relative;
+    float: right;
+}
+#D_L{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+}
+#D_V{
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 180px;
+    position: relative;
+    float: right;
+
+}
+#D_H {
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 180px;
+    position: relative;
+    float: right;
+
+}
+
+#D_U {
+    width: 50px;
+    margin-top: 70px;
+    text-aling:left;
+    padding: 0 175px;
+    position: relative;
+    float: right;
+
+}
+#C_M {
+    width: 50px;
+    margin-top: 70px;
+    text-aling:left;
+    padding: 0 130px;
+    position: relative;
+    float: right;
+
+}
+#D_G {
+    width: 50px;
+    margin-top: 70px;
+    text-aling:left;
+    padding: 0 175px;
+    position: relative;
+    float: right;
+
+}
+
+#D_T {
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 210px;
+    position: relative;
+    float: right;
+
+}
+#D_Tem {
+    width: 50px;
+    margin-top: 90px;
+    text-aling:left;
+    padding: 0 140px;
+    position: relative;
+    float: right;
+
+}
+#back{
+    width: 400px;
+        background-color: #a9c9d0;
+box-shadow: 5px 5px 3px #888888;
+}
+#backM{
+
+    width: 555px;
+       background-color: #a9c9d0;
+    margin-bottom: 200px;
+    box-shadow: 5px 5px 3px #888888;
+margin-left: -50px;
+}
+
+#backN{
+
+    width: 507px;
+      background-color: #a9c9d0;
+    margin-bottom: 200px;
+    box-shadow: 5px 5px 3px #888888;
+
+}
+#backL{
+    width: 553px;
+        background-color: #a9c9d0;
+       box-shadow: 5px 5px 3px #888888;
+    margin-bottom: 200px;
+    margin-left: -30px;
+}
+#backD{
+
+    width: 370px;
+       background-color: #a9c9d0;
+    margin-bottom: 100px;
+    box-shadow: 5px 5px 3px #888888;
+      margin-left: -45px;
+}
+#backA{
+
+    width: 660px;
+       background-color: #a9c9d0;
+    margin-bottom: 40px;
+    margin-left: -130px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backPG{
+
+    width: 595px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    margin-left: -60px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backPU{
+
+    width: 595px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+    margin-left: -60px;
+}
+#backPP{
+
+    width: 610px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+    margin-left:  -75px;
+}
+#backMG{
+
+    width: 390px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backMU{
+
+    width: 390px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backU{
+
+    width: 460px;
+        background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backG{
+
+    width: 460px;
+       background-color: #a9c9d0;
+    margin-bottom: 40px;
+    box-shadow: 5px 5px 3px #888888;
+}
+
+#backV{
+margin-left: -20px;
+    width: 503px;
+        background-color: #a9c9d0;
+    margin-bottom:200px;
+    box-shadow: 5px 5px 3px #888888;
+}
+
+#backH{
+    width: 500px;
+       background-color: #a9c9d0;
+    margin-bottom: 200px;
+    box-shadow: 5px 5px 3px #888888;
+    margin-left: -10px;
+}
+#backT{
+    width: 573px;
+        background-color: #a9c9d0;
+    margin-bottom: 200px;
+    box-shadow: 5px 5px 3px #888888;
+    margin-left: -37px;
+}
+#backTem{
+    width: 400px;
+       background-color: #a9c9d0;
+    margin-bottom: 200px;
+    box-shadow: 5px 5px 3px #888888;
+}
+#backpass{
+    width: 360px;
+        background-color: #a9c9d0;
+       box-shadow: 5px 5px 3px #888888;
+    margin-bottom: 100px;
+}
+#backLog{
+    width: 350px;
+        background-color: #a9c9d0;
+       box-shadow: 5px 5px 3px #888888;
+    margin-bottom: 100px;
+    margin-left: -50px;
+    margin-top: 80px;
+}
+#sep{
+
+    margin-left: 30px;
+}
+#sep1{
+
+    margin-left: 10px;
+}
+#ti{
+    ;
+    margin-bottom: 80px;
+    margin-top: 100px;
+    width: 600px;
+
+}
+
+
+#site_title {
+
+    float: left;
+    width: 200px;
+    margin-top: 50px;
+    text-align: center;
+    padding: 0 10px;
+
+
+
+}
+
+#templatemo_header  #site_title h1 {
+    margin: 0;
+    padding: 0;
+
+}
+
+#templatemo_header  #site_title h1 a {
+    margin: 0px;
+    padding: 0px;
+    font-size: 38px;
+    color: #000;
+    font-weight: normal;
+    text-decoration: none;
+
+}
+
+#templatemo_header #header_address {
+
+    float: right;
+    display: inline-block;
+    text-align: right;
+    color: #fff;
+    padding: 15px 0 0 0;
+    margin-top: 10px;
+}
+#templatemo_header #header_address1 {
+    float: right;
+    display: inline-block;
+    text-align: right;
+    color: #fff;
+    padding: 15px 0 0 0;
+    margin-top: 40px;
+}
+#templatemo_middle {
+    clear: both;
+    width: 970px;
+    height: 430px;
+    background: url(images/pic2.jpg) top center no-repeat;
+  
+    margin-top: 30px;
+}
+#templatemo_middle1 {
+    clear: both;
+    width: 970px;
+    height: 430px;
+     margin-top: 6px;
+}
+#templatemo_banner {
+    padding: 120px 35px 0;
+    height: 170px;
+    color: #fff;
+
+}
+
+#templatemo_banner h1 {
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 3px;
+    /*	text-shadow: 1px 1px 1px #555;	*/
+    font-weight: normal;
+}
+
+#templatemo_banner h1 span {
+    display: block;
+    font-size: 30px;
+    color: #536d48;
+    margin-top: 30px;
+}
+
+/* menu */
+
+#templatemo_menu {
+    width: 910px;
+    height: 120px;
+    padding: 20px 230px 0;
+    background: url(images/templatemo_menu11.png) no-repeat;
+ 
+    margin-top: 65px;
+    color:#fff;
+
+}
+#logbutton {
+    color: #FFFFFF;
+    width: 160px;
+    height: 70px;
+
+    
+    background: url(images/button.png) no-repeat;
+
+}
+
+#templatemo_menu1 {
+    width: 970px;
+    height: 60px;
+    padding: 20px 220px 0;
+    background: url(images/templatemo_menu11.png) no-repeat;
+    margin-top: 45px;
+   
+ clear: both;
+   
+}
+
+#templatemo_menu ul {
+    margin: 0;
+    padding: 0 35px;
+    list-style: none;
+
+}
+#templatemo_menu1 ul {
+    margin: 0;
+    padding: 0 35px;
+    list-style: none;
+
+}
+#templatemo_menu ul li {
+    padding: 0px;
+    margin: 0px;
+    display: inline;
+
+}
+#templatemo_menu1 ul li {
+    padding: 0px;
+    margin: 0px;
+    display: inline;
+}
+#templatemo_menu ul li a {
+    float: left;
+    display: block;
+    width: 102px;
+    height: 27px;
+    padding: 5px 0 0 0;
+    margin: 0 10px 0 0 ;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    
+    font-weight: bold;
+    outline: none;
+   
+    
+}
+#templatemo_menu1 ul li a {
+    float: left;
+    display: block;
+    width: 102px;
+    height: 27px;
+    padding: 5px 0 0 0;
+    margin: 0 10px 0 0 ;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;	
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+#templatemo_menu ul li a:hover, #templatemo_menu ul li .current {
+    color: #FFFFFF;
+    background: url(images/templatemo_menu_hover_11.png) no-repeat;
+    
+}
+
+#templatemo_menu1 ul li a:hover, #templatemo_menu1 ul li .current {
+    color: #ffffff;
+    background: url(images/templatemo_menu_hover_11.png) no-repeat;
+}
+
+/* end of menu */
+
+/* main */
+
+#templatemo_main {
+    clear: both;
+    width: 900px;
+    padding: 35px;
+}
+
+
+#templatemo_content {
+    margin-top: 20px;
+    float: left;
+    width: 200px;
+position: absolute;
+}
+#templatemo_content1 {
+    margin-top: 350px;
+    float: left;
+    width: 200px;
+position: absolute;
+}
+#templatemo_content2 {
+    margin-top: 400px;
+    float: left;
+    position: absolute;
+    width: 200px;
+
+}
+#templatemo_content_inside {
+    margin-top: 40px;
+    float: left;
+    width: 500px;
+    height: 200px;
+   
+
+}
+#templatemo_content_inside1 {
+    margin-top: 20px;
+    float: left;
+    width: 570px;
+}
+
+#menuSabt {
+    margin-top: 20px;
+    float: right;
+    width: 500px;
+
+}
+
+
+.col_w420 {
+    width: 420px;
+}
+
+.col_w250 {
+    width: 250px;
+}
+
+.col_w190 {
+    width: 150px;
+    padding-right: 40px;
+}
+
+.services_section {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.services_section .ss_left {
+    float: left;
+    width: 80px;
+}
+
+.services_section .ss_left img {
+    width: 80px;
+    height: 80px;
+}
+
+.services_section .ss_right {
+    float: right;
+    width: 450px;
+}
+
+
+.price {
+    color: #000;
+    font-size: 16px;
+}
+
+.price span {
+    font-size: 20px;
+    color: #C00;
+}
+
+#templatemo_sidebar {
+    float: right;
+    width: 130px;
+
+
+
+}
+#tempsiddd{
+   background-color: #39628e;
+    opacity:0.8;
+}
+#dd{
+  margin-left: 0px;
+}
+
+#contact_form {
+    float: left;
+    padding: 0;
+}
+
+#contact_form form {
+    margin: 0px;
+    padding: 0px;
+}
+
+#contact_form form .input_field {
+    width: 350px;
+    padding: 5px 0;
+    background: #a09883;
+    border: 1px solid #827962;
+}
+
+#contact_form form label {
+    display: block;
+    width: 100px;
+    margin-right: 10px;
+    font-size: 14px;	
+}
+
+#contact_form form textarea {
+    width: 350px;
+    height: 200px;
+    background: #a09883;
+    border: 1px solid #827962;
+}
+
+#contact_form form .submit_btn {
+    margin-left: 73px;
+    width: 102px;
+    height: 27px;
+    border: none;
+    cursor: pointer;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: url(images/templatemo_button_1.png) no-repeat;
+    color: #FFFFFF;
+}
+
+#contact_form form .submit_btn:hover {
+    background: url(images/templatemo_button_hoven.png) no-repeat;
+}
+
+/* end of main */
+
+/* footer */
+#templatemo_footer_wrapper2 {
+    width: 100%;
+    margin-top: 1500px;
+    background: url(images/templatemo_footer.jpg) repeat-x;
+
+}
+#templatemo_footer_wrapper {
+    width: 100%;
+    margin-top: 1200px;
+    background: url(images/templatemo_footer.jpg) repeat-x;
+
+}
+#templatemo_footer_wrapper1 {
+    width: 100%;
+    margin-top: 85%;
+    background: url(images/templatemo_footer.jpg) repeat-x;
+
+}
+#templatemo_footer {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 35px;
+    text-align: center;
+    color: #7cd4f8;
+
+}
+
+#templatemo_footer a {
+    color: #dfdace;
+}
+
+/* end of footer */
+#bodylogin {
+    background: url(images/log.png) center no-repeat;
+    float: left;
+    width: 100px;
+    margin-top: 30px;
+    padding: 25px 0 0 0;
+
+
+}
+#cont{
+    background-color: #6d2635;
+    opacity:0.9;
+border: 4px  snow inset;
+    width: 280px;
+}
+#cont1{
+    background-color: gainsboro;
+    opacity: 0.8;
+
+
+    width: 300px;
+}
+p{
+
+}
+p.padding {
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+.UName { text-indent:65px; }
+.UName1 { text-indent:100px; }
+
+.boxhead .otherPage {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#nav1{
+    width: 145px;
+    height: 40px;
+    margin-left: 310px;
+     border: 5px  snow inset;
+}
+
+#nav{
+    list-style:none;
+    font-weight:bold;
+    margin-bottom:10px;
+    float:left; /* Clear floats */
+    width:30%;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 310px;
+ z-index:17;
+    border: 3px  snow inset;
+    /* Bring the nav above everything else--uncomment if needed.
+    position:relative;
+    z-index:5;
+    */
+}
+#nav li{
+    float:left;
+    margin-right:10px;
+    position:relative;
+    border: 4px solid #446787;
+    
+}
+#nav a{
+    display:block;
+    padding:5px;
+    color:#fff;
+    background:#446787;
+    text-decoration:none;
+    border: 1px  snow inset;
+}
+#nav a:hover{
+    color:#fff;
+    background:#6d2635;
+    text-decoration:underline;
+}
+
+/*--- DROPDOWN ---*/
+#nav ul{
+    background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+    background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+    border: 1px solid #0000FF;
+}
+#nav ul li{
+    padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+    float:none;
+}
+#nav ul a{
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#nav li:hover ul{ /* Display the dropdown on hover */
+    left:0; /* Bring back on-screen when needed */
+}
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background:#6b0c36;
+    text-decoration:underline;
+}
+#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration:none;
+}
+#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    background:#333;
+}
+#nav ul{
+    background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+    background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+#nav ul li{
+    padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+    float:none;
+}
+#nav ul a{
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#nav li:hover ul{ /* Display the dropdown on hover */
+    left:0; /* Bring back on-screen when needed */
+}
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    background:#6b0c36;
+    text-decoration:underline;
+}
+#slideshow { 
+    margin-left: -200px;
+    margin-top: 50px;
+    position: absolute; 
+    
+
+}
+
+#slideshow > div { 
+  
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+
+.roundedDiv{
+ background-color: #a9c9d0;
+}
+.squareDiv{
+    background-color: #B6ACA2;
+}
+.ReqDiv{
+     background-color: #b4b4b4;
+}

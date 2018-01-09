@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>الاطلاع على المستندات</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+
+
+
+                            <div class="button float_l">
+                                <h:panelGroup rendered="#{empty userId}">
+                                    <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                                       text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{not empty userId}">
+
+
+                                    <p:commandLink
+                                        style=" margin-left: 0px; width: 140px; color: white; ;
+                                        text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                        action="#{login_Backing.LogOut}" >
+
+                                        تسجيل خروج 
+                                    </p:commandLink>
+                                    <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                                </h:panelGroup>
+                            </div>
+                        </h:form>
+                    </h3>
+                </div>
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+                <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+            </div><!-- end of header -->
+
+
+            <div id="templatemo_menu1">
+
+                <ul>
+                    <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                    <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                    <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                </ul>
+
+            </div> <!-- end of templatemo_menu -->
+
+            <h:panelGroup rendered="#{not empty userId}">
+                <div id="menuSabt">
+                    <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                    </div>
+                    <div id="nav" style="text-align: center; " >
+
+
+                        <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+
+                            <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+
+                        </ui:repeat>
+
+
+                    </div>
+                </div>
+            </h:panelGroup>
+            <div id="D_V">
+                <div id="backV">
+                    <h:form id="form1">
+                        <p:growl id="growl" showDetail="true" life="2000" />
+                        <div id="left" style="width:500px; border-radius: 20px ;">
+                            <script type="text/JavaScript">
+
+                                function timedRefresh(timeoutPeriod) {
+                                setTimeout("location.reload(true);",timeoutPeriod);
+                                }
+
+                            </script>
+
+                            <p style="text-align: center; ">
+                                <br/>
+
+                                <h7><h:outputText value="الاطلاع على المستندات" style="margin-left: 10px; " /></h7>
+                                <p:separator style="height: 7px; width: 500px;"></p:separator>
+
+                                <h:panelGrid columns="3" id="panelGrid1" style="size: 400px;margin-left: 160px;">
+
+                                    <p:selectOneMenu id="states" value="#{viewDocuments_Backing.ownerId}"
+                                                     valueChangeListener="#{viewDocuments_Backing.selectOwnerListner}"
+                                                     style="width: 180px;margin-left: -30px;" class="UName" >
+                                        <f:selectItem itemValue="0" itemLabel="اختار" />
+                                        <f:selectItems value="#{viewDocuments_Backing.ownerList}" var="owners"
+                                                       itemLabel="#{owners.ownerId}" itemValue="#{owners.ownerId}"/>
+                                    </p:selectOneMenu>
+
+                                    <h:outputText value="الملف" style=" font-size: 16px; font-weight: bold; margin-left: 30px;"/>
+                                    <h:outputText value="*" style="color: red"/>
+
+                                </h:panelGrid>
+
+                                <!--<div id="hh" >-->
+
+                                <div id="hh" style=" margin-left: 130px;">
+                                    <p:commandButton value="اظهار" style="margin: 10px;" icon="ui-icon-search"
+                                                     onclick="PF('dlg').show();"/>
+                                    <p:commandButton value="تعديل" id="edit" update="docSlider growl" 
+                                                     actionListener="#{viewDocuments_Backing.Edit}" icon="ui-icon-pencil"/>
+                                </div>
+                                <!--</div>-->
+                                <br/>
+                                <p:dialog  width="400" modal="true"  id="dlg" widgetVar="dlg" resizable="false" draggable="false"  dynamic="true" style="text-align: right">
+                                    <h:outputText value="هل انت متاكد انك تريد هذا الملف؟" />
+                                    <br/>
+                                    <br/>
+
+                                    <p:commandButton value="نعم" update="docSlider growl"
+                                                     actionListener ="#{viewDocuments_Backing.SendReq}"
+                                                     oncomplete="PF('dlg').hide()"
+                                                     icon="ui-icon-check" style="margin: 5px;" />
+                                    <p:commandButton value="لا" update="states"
+                                                     actionListener ="#{viewDocuments_Backing.RemoveOwner}"
+                                                     oncomplete="PF('dlg').hide()"
+                                                     icon="ui-icon-close" style="margin: 5px;"/>
+
+                                </p:dialog>
+                                <p:dataTable id="docSlider"
+                                             var="doc" 
+                                             value="#{viewDocuments_Backing.documentsList}" rows="1"
+                                             selection="#{viewDocuments_Backing.selectedDocument}"
+                                             editable="true"
+                                             paginator="true" 
+                                             style="text-align: center;width: 500px; margin-right: 200px;" 
+                                             emptyMessage="لا يوجد بيانات">
+
+
+                                    <p:column>
+                                        <p:remoteCommand name="prnt" actionListener="#{viewDocuments_Backing.printing(doc)}" />
+                                        <p:commandButton value="مسح" id="delet2" disabled="#{viewDocuments_Backing.deleting(doc.docSer)}" 
+                                                         update="docSlider :form1:growl" style="margin: 5px;" icon="ui-icon-trash" 
+                                                         oncomplete="javascript:timedRefresh(1750)"
+                                                         actionListener="#{viewDocuments_Backing.deletProcess(doc.docSer)}"/>
+
+
+
+                                        <p:commandButton  id="prTable"  value="طباعة البيانات" onclick="prnt()"
+                                                          icon="ui-icon-print" style="margin: 5px;">
+                                            <p:printer target="TableData" />
+                                        </p:commandButton>
+
+
+
+
+                                        <p:commandButton  id="pr"  value="طباعة المستند" onclick="prnt()" action="#{viewDocuments_Backing.printing(doc)}"
+                                                          icon="ui-icon-print" style="margin: 5px;">
+                                            <p:printer target="panelimage" />
+                                        </p:commandButton>
+
+                                        <p:panel id="TableData" style="border: none;">
+                                            <h:panelGrid columns="2"  cellpadding="5" style="width: 470px; margin-left: -14px;">
+                                                <h:outputText value="#{doc.docSer}" />
+                                                <h:outputText value="مسلسل المستند" id="docser" style="font-size: 12px; font-weight: bold" />
+
+                                                <h:outputText value="#{doc.doctypeId.doctypeName}" />
+                                                <h:outputText value="تصنيف المستند" style="font-size: 12px; font-weight: bold"/>
+                                                <h:outputText value="#{doc.location}"/>
+                                                <h:outputText value="مكان المستند فى الارشيف" style="font-size: 12px; font-weight: bold"/>
+
+                                                <h:outputText value="#{doc.createdDate.date}/#{doc.createdDate.month+1}/#{doc.createdDate.year+1900}  #{doc.createdDate.hours}:#{doc.createdDate.minutes}" />
+                                                <h:outputText value="تاريخ التحميل" style="font-size: 12px; font-weight: bold"/>
+                                                <h:outputText value="#{doc.userId.userName}" />
+                                                <h:outputText value="بواسطة" style="font-size: 12px; font-weight: bold"/>
+
+                                                <h:outputText value="#{doc.fileName}" />
+                                                <h:outputText value="اسم الملف" id="filename" style="font-size: 12px; font-weight: bold" />
+
+
+                                                <h:outputText value="#{doc.homeId.homePath}" />
+                                                <h:outputText value="مسار التخزين" style="font-size: 12px; font-weight: bold"/>
+
+
+                                                <p:dataTable id="datatable" value="#{doc.documentDataList}" selection="#{viewDocuments_Backing.selectedDocument}"
+                                                             var="app" editable="true" rowKey="#{app.dataID}"
+                                                             style="color: threedface; font-size: 11px;" emptyMessage="لا يوجد بيانات"  >
+                                                    <p:column style="width:20px">
+                                                        <p:rowEditor />
+                                                    </p:column>
+
+
+                                                    <p:column id="column3" style="font-size: 11px;">
+                                                        <f:facet name="header">
+                                                            <h:outputText value="" />
+                                                        </f:facet>
+                                                        <p:cellEditor>
+                                                            <f:facet name="output">
+                                                                <h:outputText value="#{app.fieldValue}"/>
+                                                            </f:facet>
+                                                            <f:facet name="input" >
+                                                                <p:inputText id="docData1" value="#{app.fieldValue}" type="#{viewDocuments_Backing.selectedRow(app.fieldName)}"
+                                                                             disabled="#{viewDocuments_Backing.update(app.fieldName)}" style="width: 100%"/>
+
+                                                            </f:facet>
+                                                        </p:cellEditor>
+                                                    </p:column>
+
+                                                    <p:column id="column2">
+                                                        <f:facet name="header">
+                                                            <h:outputText value="" />
+                                                        </f:facet>
+                                                        <h:outputText value="#{app.fieldName}" />
+                                                    </p:column>
+
+                                                    <p:ajax event="rowEdit" listener="#{viewDocuments_Backing.onRowEdit}" update="datatable :form1:growl" />
+
+
+                                                </p:dataTable>
+                                                <h:outputText value="بيانات المستند" style="font-size: 12px; font-weight: bold" />
+
+                                                <ui:repeat id="rep" value="#{viewDocuments_Backing.changeDoc(doc).entrySet().toArray()}" var="entry">
+                                                    <a href="#{entry.key}" style="font-size: 13px;">#{entry.value}</a>
+                                                    <br/>
+                                                </ui:repeat>
+
+                                                <h:outputText value="مرفقات المستند" style="font-size: 12px; font-weight: bold " />
+                                                <p:panel id="panelimage" style="width: 270px; height: 280px;border: none">
+                                                    <img id="image" src="#{viewDocuments_Backing.changeDoc2(doc)}" onclick="PF('imgdlg').show();" alt="لا يوجد صورة" 
+                                                         style="width: 220px; height: 265px;margin-left: -60px;"/>
+                                                    <br/>
+
+                                                </p:panel>
+                                                <p:panel id="panelimage1" style="border: none">
+                                                    <h:outputText value="صورة المستند" style="font-size: 12px; font-weight: bold" />
+                                                    <br/>
+                                                    <h:outputText value="اضغط على الصورة للتكبير" style="color: #ca093f;margin-left: -10px;"/>
+
+
+
+                                                </p:panel>
+
+
+
+                                            </h:panelGrid>
+                                        </p:panel>
+                                        <p:dialog width="800" height="600"  id="imgdlg"
+                                                  widgetVar="imgdlg" resizable="false"  draggable="false" modal="true"  dynamic="true" >
+                                            <img id="image" src="#{viewDocuments_Backing.changeDoc2(doc)}" style="width: 790px; height: 800px" alt="لا يوجد صورة"  />
+                                        </p:dialog>
+                                    </p:column>
+                                </p:dataTable>
+                            </p>
+                        </div>
+
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+    </h:body>
+
+</html>
+

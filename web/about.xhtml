@@ -1,0 +1,1330 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ez="http://xmlns.jcp.org/jsf/composite/ezcomp">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>عن الديوان</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="templatemo_wrapper">
+
+
+
+            <div id="site_title" >
+                <h3 align="center" >
+                    <h:form>
+
+
+
+                        <div class="button float_l">
+                            <h:panelGroup rendered="#{empty userId}">
+                                <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                                   text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                            </h:panelGroup>
+                            <h:panelGroup rendered="#{not empty userId}">
+
+
+                                <p:commandLink
+                                    style=" margin-left: 0px; width: 140px; color: white; ;
+                                    text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                    action="#{login_Backing.LogOut}" >
+
+                                    تسجيل خروج 
+                                </p:commandLink>
+                                <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                            </h:panelGroup>
+                        </div>
+
+                    </h:form>
+                </h3>
+            </div><!-- end of site_title -->
+
+            <div id="templatemo_header">
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+
+
+            <div id="templatemo_menu1" >
+
+                <ul>
+                    <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                    <li><a href="about.xhtml"   class="current" style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                    <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                </ul>   	
+
+            </div> <!-- end of templatemo_menu -->
+
+            
+
+            <div id="templatemo_content2" style="margin-left: 100px; margin-top: 0px;">
+
+                    <table style="width: 705px;">
+                           
+                            <tr>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                               
+                                
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+
+                                </td>
+
+                                <td align="center" valign="middle" class="roundedDiv" colspan="2">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center;  ">
+                                        المحـــــــــافـظ
+                                    </div>
+                                </td>
+
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+
+                                <td align="center" valign="top" colspan="2" rowspan="3">
+                                        <table  style="width:100%; height: 75px;">
+                                        <tr>
+                                            <td style="width: 33%">
+                                                &nbsp;</td>
+                                            <td rowspan="3" style="width: 33%">
+                                                <img alt="" height="75" src="./CSS/images/arrow.png" width="15" /></td>
+                                            <td style="width: 33%">
+                                                &nbsp;</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                &nbsp;</td>
+                                            <td>
+                                                &nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </td >
+
+
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                 <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr >
+                                <td  align="center" style="height: 10px;" valign="top" colspan="11">
+                                      <hr style="width: 95%; background-color: #89482C; color: #89482C;" />
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:9%; height: 45px;" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td  rowspan="10" style="width:9%" align="center" valign="top">
+                                    <img alt="" height="700" src="./CSS/images/arrow.png" width="10" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td >
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="width:9%" align="center" valign="top">
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                            </tr>
+                            
+                            <tr>
+                            
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        مركز المعلومات والتوثيق
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center;  ">
+                                               الإدارة العامة لشئون  الإنتاج و الشئون  الإقتصادية
+ 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الأزمات 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        الإدارة العامة للشئون القانونية
+
+                                    </div>
+                                </td>
+                                
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        الإدارة العامة للتخطيط ومتابعة الخطة
+
+                                    </div>
+                                </td >
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       جهاز حماية أملاك الدولة
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        المناطق الصناعية 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        الإدارة العامة لشئون مكتب المحافظ
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        مكتب  خدمة المستثمرين
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون الإتصال
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الحاسب الألى 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون الهيئات والشركات 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                   
+                                   &nbsp;
+                                   
+                                   </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الفتوى والعقود
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة التخطيط</div>
+                                </td >
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إداره املاك الدوله</div>
+                                </td >
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.المكتب الفنى</div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الأمن
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    &nbsp;
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.شئون الأتصال بمديريات الخدمات</div>
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة التوثيق والمكتبة
+                                    </div>
+                                </td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون البحوث الإقتصادية
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;
+                                    </td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة القضايا
+                                    </div>
+                                </td>
+                                
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة متابعة الخطة 
+                                    </div>
+                                </td >
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة حصر أملاك الدولة</div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.الشئون المالية والأدارية</div></td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة المتابعة
+                                    </div>
+                                </td>
+                               <td style="width:9%;" align="center" valign="middle" >
+                                    &nbsp;
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.شئون الأتصال بالطلاب</div>
+                                    </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الإحصاء
+                                    </div>
+
+                                    </td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون الأستثمار
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                               <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة التحقيقات
+                                    </div>
+                                </td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة  حماية أملاك الدولة </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.الشئون الهندسية</div></td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة تحاليل تقارير الجهاز المركزى للمحاسبات
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.شئون الأتصال بالتنظيمات الشعبية والسياسية</div></td>
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة النشر
+                                    </div>
+
+                                    </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        ق.المعلومات</div></td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       إدارة الإحصاءات المركزية
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       إدارة خدمة المواطنين
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.العلاقات الخارجية
+                                    </div>
+                                </td>
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       إدارة العلاقات العامة
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="middle">
+                                    <img alt="" height="15" src="./CSS/images/arrowl.png" width="40" /></td>
+
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.العلاقات الداخلية
+                                    </div>
+                                </td>
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       إدارة المحاجر
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.الصحافة والأعلام
+                                    </div>
+                                </td>
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                <td style="width:9%;" align="center" valign="middle" class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       إدارة شئون البيئة
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.رعاية العاملين
+                                    </div>
+                                </td>
+
+                                
+                               
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%;" align="center" valign="middle" class="roundedDiv" colspan="2">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       السكرتير العام المساعد
+
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%" align="center" valign="middle">
+                                    <img alt="" height="15" src="./CSS/images/arrowr.png" width="100%" />
+                                 </td>
+                               
+
+                                <td style="width:9%;" align="center" valign="middle" class="roundedDiv" colspan="3">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                       الســـكرتير العام
+
+                                    </div>
+                                </td>
+
+                                
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                                
+                                <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+
+                               <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                               <td style="padding: 3px; width:9%" align="center" valign="top">
+                                    &nbsp;</td>
+                               
+                            </tr>
+                            
+
+                            <tr>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td align="center" valign="top" colspan="3" rowspan="3">
+                                        <table  style="width:100%; height: 75px;">
+                                        <tr>
+                                            <td style="width: 33%">
+                                                &nbsp;</td>
+                                            <td rowspan="3" style="width: 33%">
+                                                <img alt="" height="75" src="./CSS/images/arrow.png" width="15" /></td>
+                                            <td style="width: 33%">
+                                                &nbsp;</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                &nbsp;</td>
+                                            <td>
+                                                &nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </td >
+                                
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                
+
+                                
+
+
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                 <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+
+                                </td>
+
+                              
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%; height: 25px;" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                                <td style="width:9%" align="center" valign="top">
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+
+                            <tr >
+                                <td  align="center" style="height: 10px; padding-left: 100px;" valign="top" 
+                                    colspan="11">
+                                    <hr style="width: 95%; background-color: #89482C; color: #89482C;" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td >
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td >
+                                
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    
+
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" >
+                                    <img alt="" height="45" src="./CSS/images/arrow.png" width="15" /></td>
+                                
+                               <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الصناعات الحرفية والتعاون الإنتاجى 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة بناء وتنمية القرية  
+                                    </div>
+                                </td>
+                                
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة التعــاون
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون المجالس</div>
+                                </td >
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة السياحة</div>
+                                </td >
+                                
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون المقر
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:18%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         الإدارة العامة للشئون المالية والإدارية
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:18%; " align="center" valign="middle" class="roundedDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        الإدارة العامة لشئون العاملين
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.العلاقات التعاونية
+                                    </div>
+                                </td>
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                          style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التنمية الأقتصادية
+                                    </div>
+                                </td>
+                                
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التعاون الزراعى                                     </div>
+                                </td>
+                                 <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.شئون المجالس
+                                    </div>
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                
+                                 <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 12px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.الرسم والتصميمات
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         إدارة الشئون الإدارية
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة شئون التوظف 
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                 <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التدريب
+                                    </div>
+                                </td>
+                                 <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                         style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التنمية الأجتماعية
+                                    </div>
+                                </td>
+                                
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                          style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التعاون الأستهلاكى
+                                    </div>
+                                </td>
+                                 <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.شئون اللجان
+                                    </div>
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.النظافة
+                                    </div>
+                                </td>
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.السكرتارية والمحفوظات
+                                    </div>
+                                </td>
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.المركبات
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة الإستحقات&nbsp; والسجلات   
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+
+                            <tr>
+                             <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.المعلومات والدراسات
+                                    </div>
+                                </td>
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                          style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التنمية العمرانية
+                                    </div>
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.شئون الموتمرات
+                                    </div>
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.صيانة المبنى
+                                    </div>
+                                </td>
+                                
+                                 <td  style="padding: 3px; " align="center" valign="middle" 
+                                     class="squareDiv" colspan="2">
+                                    &nbsp;
+                                   <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         إدارة الشئون المالية  
+                                    </div>
+                                </td>
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                    class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة موازنة الوظائف     
+                                    </div>
+                                </td>                               
+                               <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+
+                                
+                            </tr>
+
+                            <tr>
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                          style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.التوجيه المالى والأدارى
+                                    </div>
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;
+                                </td>
+                                <td style="padding: 3px; " align="center" valign="middle" class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.الموازنة
+                                    </div>
+                                </td>
+
+                                <td style="padding: 3px; " align="center" valign="middle" class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 12px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.المشتريات
+                                    </div>
+                                </td>
+
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="squareDiv">
+                                    <div   
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 14px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                        إدارة رعاية العاملين       
+                                    </div>
+                                </td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+
+
+                            <tr>
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle">
+                                      &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.الحسابات
+                                    </div>
+                                </td>
+
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.المخازن
+                                    </div>
+                                </td>
+
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     >
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+
+
+                            <tr>
+                                  <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     >
+                                      &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                                
+                                 <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                     &nbsp;</td>
+                               <td  style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     class="ReqDiv">
+                                    <div   
+                                        
+                                        
+                                        style="font-family: 'Times New Roman'; font-size: 13px; font-weight: bold; padding: 2px 2px 2px 2px; text-align: center; ">
+                                         ق.مراقبة المخزون السلعى</div>
+                                </td>
+
+                                <td  style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+
+                                <td colspan="2" style="padding: 3px; width:9%; " align="center" valign="middle" 
+                                     >
+                                    &nbsp;</td>
+                                <td style="padding: 3px; width:9%; " align="center" valign="middle">
+                                    &nbsp;</td>
+                            </tr>
+
+
+
+                        </table>
+
+                </div>
+
+              
+
+           
+
+
+          
+        </div>
+
+        <!-- end of wrapper -->
+
+        <div id="templatemo_footer_wrapper2">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+        <!-- templatemo 252 active -->
+        <!-- 
+        Active Template 
+        http://www.templatemo.com/preview/templatemo_252_active 
+        -->
+    </h:body>
+</html>
+

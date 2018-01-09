@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>صلاحيات صفحات الويب</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+
+
+
+                           <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+                        </h:form>
+                    </h3>
+                </div><!-- end of site_title -->
+
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                 <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+            
+
+                <div id="templatemo_menu1">
+
+                    <ul>
+                        <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                        <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                        <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                    </ul>   	
+
+                </div> <!-- end of templatemo_menu -->
+            
+
+         <h:panelGroup rendered="#{not empty userId}">
+                    <div id="menuSabt">
+                        <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                        </div>
+                         <div id="nav" style="text-align: center; " >
+                            
+                                
+                                <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+                              
+                                    <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+                                  
+                                </ui:repeat>
+                                
+                          
+                        </div>
+                    </div> 
+                </h:panelGroup>
+
+            <div id="D_PP">
+                <div id="backPP">
+                    <h:form id="Form1">
+
+                        <p:growl id="msg" showDetail="true" life="2000" />
+                        <div id="left" style="width:610px; border-radius: 20px ;">
+
+
+                            <p style="text-align: center; ">
+                                <br/>
+
+                                <h7><h:outputText value="صلاحيات صفحات الويب" style="margin-left: 30px; " /></h7>
+                                <p:separator style="height: 7px; width: 606px;"></p:separator>
+                                <h:panelGrid columns="3" id="panelGrid1" style="size: 1000px; margin-left: 200px; text-align: center">
+
+
+                                    <p:selectOneMenu id="states" value="#{page_Permission_Backing.pageID}" 
+                                                     valueChangeListener="#{page_Permission_Backing.selectPageListner}"  class="UName1" style="width: 250px;margin-left: -60px;">
+                                        <f:selectItem itemLabel="اختار" 
+                                                      itemValue="0"/>
+
+                                       <f:selectItems value="#{page_Permission_Backing.appPages}" var="User" 
+                                                      itemLabel="#{User.pageDescription}" itemValue="#{User.pageID}" />
+       
+                                        <p:ajax event="change" update=":Form1:panelGrid1"/>
+                                        <p:ajax event="change" update=":Form1:tab1"/>
+                                    </p:selectOneMenu>
+                                    <h:outputText value="اسم الصفحة" style="font-size: 16px; font-weight: bold;margin-left: 30px;"/>
+                                    <h:message for="states"/>
+
+                                    <!--<h:commandButton value="Go to Permission"id="commandButton4" action=""/>-->
+                                </h:panelGrid>
+
+
+                                <br/>
+
+                                <div id="hh" style=" margin-left: 200px;">       
+                                    <p:commandButton value="تفريغ البيانات" actionListener="#{page_Permission_Backing.resetValues}" update="panelGrid1 
+                                                     :Form1:tab1:panelGrid12 
+                                                     :Form1:tab1:panelGrid121 
+                                                     :Form1:tab1:panelGrid2 :Form1:tab1 :Form1:tab1
+                                                     " icon="ui-icon-cancel">
+                                    </p:commandButton>
+                                    
+                                </div>
+
+
+
+                                <p:tabView dynamic="true" cache="true" id="tab1" style="width:600px; margin-top: 20px; text-align: right; ">
+                                    <p:tab title="المجموعة" >
+                                        <p:panel id="selectedDocument1" header="صلاحيات المجموعات">
+                                            <h:panelGrid columns="3" id="panelGrid31" style="text-align: center" >
+                                                <p:commandButton value="مسح" actionListener="#{page_Permission_Backing.onDeleteGroup}" update=":Form1:tab1:panelGrid121 :Form1:msg" icon="ui-icon-trash"/>
+
+
+                                                <h:panelGrid columns="1" id="panelGrid121" style="text-align: center" >
+                                                    <p:dataTable var="DocDTD" value="#{page_Permission_Backing.groupList}" 
+                                                                 id="dataTable21"
+                                                                 selectionMode="single" rowKey="#{DocDTD.groupId}" 
+                                                                 selection="#{page_Permission_Backing.groupsEntity}" styleClass="mystyle" emptyMessage="لا يوجد بيانات">
+                                                        <f:facet name="header">
+                                                            <h:outputText value="المجموعات المصرح لها " id="outputText11"/>
+                                                        </f:facet>
+
+                                                        <p:column>
+                                                            <f:facet name="header">
+                                                                <h:outputText value="ـــــــــــ"/>
+                                                            </f:facet>
+                                                            <h:outputText value="#{DocDTD.groupName}"/>
+                                                        </p:column>
+                                                    </p:dataTable>
+                                                </h:panelGrid>
+                                                <h:panelGrid columns="3" id="panelGrid21">
+
+
+
+                                                    <p:selectOneMenu id="stat1" value="#{page_Permission_Backing.groupID}" valueChangeListener="#{page_Permission_Backing.groupSelected}"
+                                                                     style="width: 180px;margin-left: 15px;" disabled="#{page_Permission_Backing.tabDisable}" class="UName">
+                                                        <f:selectItem itemLabel="اختار" itemValue="0"/>
+                                                        <f:selectItems value="#{group_Backing.groups}" var="group"
+                                                                       itemLabel="#{group.groupName}" itemValue="#{group.groupId}"/>
+                                                        <p:ajax event="change" update="panelGrid121 addgroup" />
+                                                    </p:selectOneMenu>
+                                                    <h:outputText value="المجموعة" id="outputText31" style="font-size: 16px; font-weight: bold; margin-left: 5px;"/>
+                                                    <h:message for="outputText31"/>
+                                                    <p:commandButton id="addgroup" value="اضافة" actionListener="#{page_Permission_Backing.onAddGroup}" disabled="#{page_Permission_Backing.addGroupFlag}" update=":Form1:tab1:panelGrid121 :Form1:msg" icon="ui-icon-plus"/>
+                                                </h:panelGrid>
+
+                                            </h:panelGrid>
+                                        </p:panel>
+                                    </p:tab>
+
+
+                                    <p:tab title="المستخدم">
+                                        <p:panel id="selectedDocument" header="صلاحيات المستخدمين">
+                                            <h:panelGrid columns="3" id="panelGrid3" >
+                                                <p:commandButton  value="مسح" actionListener="#{page_Permission_Backing.onDeleteUser}" update=":Form1:tab1:panelGrid12 :Form1:msg" icon="ui-icon-trash"/>
+                                                <h:panelGrid columns="1" id="panelGrid12" style="text-align: center">
+                                                    <p:dataTable var="Docuser" value="#{page_Permission_Backing.userList}"
+                                                                 id="dataTable2"
+                                                                 selectionMode="single" rowKey="#{Docuser.userId}"
+                                                                 selection="#{page_Permission_Backing.usersEntity}" styleClass="mystyle" emptyMessage="لا يوجد بيانات">
+                                                        <f:facet name="header">
+                                                            <h:outputText value="المستخدمين المصرح لهم" id="outputText1"/>
+                                                        </f:facet>
+                                                        <p:column>
+                                                            <f:facet name="header">
+                                                                <h:outputText value="ـــــــــــ"/>
+                                                            </f:facet>
+                                                            <h:outputText value="#{Docuser.userName}"/>
+                                                        </p:column>
+                                                    </p:dataTable>
+                                                </h:panelGrid>
+                                                <h:panelGrid columns="3" id="panelGrid2" style="text-align: center">
+
+
+                                                    <p:selectOneMenu id="states" value="#{page_Permission_Backing.userID}" disabled="#{page_Permission_Backing.tabDisable}"
+                                                                     style="width: 180px;margin-left: 15px;" valueChangeListener="#{page_Permission_Backing.userSelected}" class="UName" >
+                                                        <f:selectItem itemLabel="اختار" itemValue="0"/>
+                                                        <f:selectItems value="#{users_Backing.users}" var="User"
+                                                                       itemLabel="#{User.userName}" itemValue="#{User.userId}"/>
+                                                        <p:ajax event="change" update="panelGrid12 adduser" />
+                                                    </p:selectOneMenu>
+                                                    <h:outputText value="المستـخدم" id="outputText3" style="font-size: 16px; font-weight: bold;margin-left: 5px;"/>
+                                                    <h:message for="outputText3"/>
+                                                    <p:commandButton id="adduser" value="اضافة" actionListener="#{page_Permission_Backing.onAddUser}" disabled="#{page_Permission_Backing.addUserFlag}"  update=":Form1:tab1:panelGrid12 :Form1:msg" icon="ui-icon-plus"/>
+                                                </h:panelGrid>
+
+
+
+
+                                            </h:panelGrid>
+                                        </p:panel>
+                                    </p:tab>
+                                </p:tabView>
+
+                            </p>
+                        </div>
+                    </h:form>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+    </h:body>
+
+</html>

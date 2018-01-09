@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>تعريف المستخدمين</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="./CSS/templatemo_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+
+        <div id="templatemo_wrapper">
+
+            <div id="templatemo_header">
+
+                <div id="site_title" >
+                    <h3 align="center" >
+                        <h:form>
+
+
+
+                           <div class="button float_l">
+                        <h:panelGroup rendered="#{empty userId}">
+                            <a href="Login.xhtml" style=" margin-left: 0px; width: 140px; color: white;
+                               text-shadow: 2px 2px 4px #000000;text-decoration:none;">تسجيل دخول</a>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty userId}">
+
+
+                            <p:commandLink
+                                style=" margin-left: 0px; width: 140px; color: white; ;
+                                text-shadow: 2px 2px 4px #000000;text-decoration:none; "
+                                action="#{login_Backing.LogOut}" >
+                               
+                                تسجيل خروج 
+                            </p:commandLink>
+                            <!--<a href="" style="margin: 15px; margin-left: 50px;">Logout</a>-->
+
+                        </h:panelGroup>
+                        </div>
+
+                        </h:form>
+                    </h3>
+                </div><!-- end of site_title -->
+
+                <div id="header_address">
+                    <img src="./CSS/images/logo.png"/>
+                </div>
+
+                <div id="header_address1" style="margin-right: 10px;">  <img src="./CSS/images/logo1_2_11.png"/> </div>
+
+
+            </div><!-- end of header -->
+
+           
+
+                <div id="templatemo_menu1">
+
+                    <ul>
+                        <li><a href="contact.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">تواصل معنا  <img src="./CSS/images/contact1.png" style="width: 15px; height: 15px; margin-left: 3px;"/></a> </li>
+                        <li><a href="about.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left: 30px; ">عن الديوان  <img src="./CSS/images/about.png" style="width: 20px; height: 15px;margin-left: -1px;"/></a></li>
+                        <li><a href="Home.xhtml"  style="color: #ffffff;text-shadow: 1px 1px 2px #000000;font-size: 18px;margin-left:30px;"> الرئيسية <img src="./CSS/images/1416243715_01.Home-128.png" style="width: 20px; height: 15px;"/></a></li>
+                    </ul>   	
+
+                </div> <!-- end of templatemo_menu -->
+           
+           <h:panelGroup rendered="#{not empty userId}">
+                    <div id="menuSabt">
+                        <div id="nav1">
+                        <h1 align="right" style="margin:10px;margin-top: 1px;">القائمة <img src="./CSS/images/menu1.png" style="width: 25px; height: 30px; margin-left: 3px;"/></h1>
+                        </div>
+                         <div id="nav" style="text-align: center; " >
+                            
+                                
+                                <ui:repeat id="rep" value="#{PagesALL.toArray()}" var="entry">
+                              
+                                    <a href="#{entry.getAppPageName()}" style="text-decoration:none;" >#{entry.getPageDescription()}</a>
+                                  
+                                </ui:repeat>
+                                
+                          
+                        </div>
+                    </div> 
+                </h:panelGroup>
+            <br/>
+            <div id="D_U">
+                <div id="backU">
+                    <h:form>
+                        
+                        <p:growl id="msg" showDetail="true" life="2000"/>
+                  
+                        <div id="left" style="width:460px; border-radius: 20px ;">
+
+
+                            <p style="text-align: center; ">
+                                <br/>
+
+                                <h7><h:outputText value="تعريف المستخدمين" style="margin-left: 10px; " /></h7>
+                                <p:separator style="height: 7px; width: 455px;"></p:separator>
+                                <br/>
+                                <h:panelGrid columns="2" id="panelGrid1111" style="size: 1000px; margin-left: 100px;">
+                                    <p:selectOneMenu id="states" value="#{user_Group_Backing.userID}"
+                                                     valueChangeListener="#{user_Group_Backing.selectMenuListner}" class="UName" style="width: 180px;margin-left: -30px;">
+                                        <f:selectItem itemLabel="اختار" itemValue="0" />
+                                        <f:selectItems value="#{user_Group_Backing.users}" var="group"
+                                                       itemLabel="#{group.userName}" itemValue="#{group.userId}" class="UName"/>
+                                        <p:ajax event="change" update="pojoPickList apply"/>
+                                    </p:selectOneMenu>
+                                    <h:outputLabel value="اسم المستخدم" for="states" style=" font-size: 16px; font-weight: bold;margin-left: 30px;"/>
+                                </h:panelGrid>
+                                <br/>
+                                <h:panelGrid columns="2" id="panelGrid1">
+
+                                    <p:pickList id="pojoPickList" 
+
+                                                value="#{user_Group_Backing.groups}" var="group"
+                                                effect="bounce" itemValue="#{group.groupId}" itemLabel="#{group.groupName}" converter="#{group.groupId}" immediate="true">
+                                        <f:converter converterId="GroupConverter" />
+                                        <f:facet name="sourceCaption">
+                                            <h:outputText value="مجموعات مشترك بيها" id="outputText1" style="font-size: 16px;"/>
+                                        </f:facet>
+                                        <f:facet name="targetCaption">
+                                            <h:outputText value="مجموعات ليس مشترك بيها " id="outputText2" style="font-size: 16px;"/>
+                                        </f:facet>
+                                        <p:ajax event="transfer" listener="#{user_Group_Backing.onTransfer}"/>
+                                    </p:pickList>
+
+
+                                </h:panelGrid>
+
+
+<br/>
+ <div id="hh" style=" margin-left: 120px;"> 
+                                <p:commandButton value="تفريغ البيانات" actionListener="#{user_Group_Backing.resetValues()}" update="apply pojoPickList states" icon="ui-icon-cancel" style="margin: 5px;">
+                                    <!--<p:ajax update="panelGrid1" resetValues="true" />-->
+                                </p:commandButton>
+                                <p:commandButton value="تعديل" id="apply" disabled="#{user_Group_Backing.disablebtn}"
+                                                 actionListener="#{user_Group_Backing.Change}" update="msg" icon="ui-icon-pencil" style="margin: 5px;"/>
+
+ </div>
+                            </p>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="templatemo_footer_wrapper">
+
+            <div id="templatemo_footer">
+
+                Copyright © 2014 <a href="http://idtsystems.net/">idtsystems</a> <!-- Credit: www.templatemo.com -->
+
+
+            </div> <!-- end of templatemo_footer -->
+
+        </div>
+    </h:body>
+
+</html>
+
